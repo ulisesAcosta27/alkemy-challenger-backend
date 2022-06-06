@@ -21,7 +21,7 @@ const Budget = sequelize.define(
       type: DataTypes.STRING,
       defaultValue: () => {
         const date = new Date()
-        return date.getDate() + "-"+ date.getMonth()+ "-" + date.getFullYear();
+        return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
       }
     },
     type: {
