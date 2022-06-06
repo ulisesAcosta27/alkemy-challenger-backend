@@ -11,9 +11,9 @@ const main = async () => {
     await sequelize.authenticate()
     console.log('DB is running successfully')
   } catch (error) {
-    console.log(errro)
+    console.log(error)
   }
 }
 main()
 
-module.exports= sequelize
+module.exports = sequelize
