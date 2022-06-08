@@ -24,10 +24,7 @@ const Budget = sequelize.define("budget", {
   },
   type: {
     type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      isEmail: true,
-    },
+    allowNull: false
   },
   catalog: {
     type: DataTypes.ENUM,

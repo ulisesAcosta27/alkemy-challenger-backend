@@ -1,3 +1,4 @@
+const { Budget } = require("../models/budget.models");
 const { User } = require("../models/user.models");
 
 const sayHi = (req, res) => {
@@ -6,7 +7,9 @@ const sayHi = (req, res) => {
 
 const obtainUser = async (req, res) => {
   try {
-    const getUser = await User.findAll();
+    const getUser = await User.findAll({
+      include: { model: Budget },
+    });
     res.status(200).json(getUser);
   } catch (error) {
     console.log(error);
@@ -16,7 +19,10 @@ const obtainUser = async (req, res) => {
 const obtainOneUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const getOneUser = await User.findByPk(id);
+    const getOneUser = await User.findOne({
+      where: { id },
+      include: { model: Budget },
+    });
     res.status(200).json(getOneUser);
   } catch (error) {
     console.log(error);
