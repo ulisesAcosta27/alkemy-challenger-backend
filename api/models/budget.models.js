@@ -23,12 +23,13 @@ const Budget = sequelize.define("budget", {
     },
   },
   type: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM,
+    values: ["ingreso", "egreso"],
     allowNull: false
   },
   catalog: {
     type: DataTypes.ENUM,
-    values: ["comida", "casa", "inpuesto", "tiempo libre"],
+    values: ["comida", "casa", "inpuesto", "tiempo libre", "ropa"],
     allowNull: false,
   },
 });
