@@ -1,19 +1,19 @@
-const pg = require('pg');
-const { Sequelize } = require('sequelize');
+const pg = require("pg");
+const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize(process.env.DB, {
-  dialectModule: pg
-})
-
+  dialectModule: pg,
+  define: { timestamps: false },
+});
 
 const main = async () => {
   try {
-    await sequelize.sync({force: true})
-    await sequelize.authenticate()
-    console.log('DB is running successfully')
+    await sequelize.sync({ force: true });
+    await sequelize.authenticate();
+    console.log("DB is running successfully");
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
-main()
+};
+main();
 
-module.exports = sequelize
+module.exports = sequelize;
