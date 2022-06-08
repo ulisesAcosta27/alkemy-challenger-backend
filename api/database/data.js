@@ -7,7 +7,7 @@ const sequelize = new Sequelize(process.env.DB, {
 
 const main = async () => {
   try {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
     await sequelize.authenticate();
     console.log("DB is running successfully");
   } catch (error) {
