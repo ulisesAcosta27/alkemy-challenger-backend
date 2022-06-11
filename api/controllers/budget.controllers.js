@@ -62,11 +62,11 @@ const updateBudget = async (req, res) => {
   const { id } = req.params;
   const { ...budgetValues } = req.body;
   try {
-    const createUse = await Budget.update(
+    const handleUpdateBudget = await Budget.update(
       { ...budgetValues },
       { where: { id } }
     );
-    res.status(204).json(createUse);
+    res.status(200).json(handleUpdateBudget)
   } catch (error) {
     console.log(error);
   }
@@ -75,8 +75,8 @@ const updateBudget = async (req, res) => {
 const deleteBudget = async (req, res) => {
   const { id } = req.params;
   try {
-    const createUse = await Budget.destroy(id);
-    res.status(204).json(createUse);
+    const handleDeleteBudget = await Budget.destroy({ where: { id } });
+    res.status(200).json(handleDeleteBudget)
   } catch (error) {
     console.log(error);
   }
