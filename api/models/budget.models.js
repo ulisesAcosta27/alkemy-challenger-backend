@@ -19,17 +19,17 @@ const Budget = sequelize.define("budget", {
     type: DataTypes.STRING,
     defaultValue: () => {
       const date = new Date();
-      return date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+      return date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
     },
   },
   type: {
     type: DataTypes.ENUM,
-    values: ["incomes", "egress"],
+    values: ["Incomes", "Egress"],
     allowNull: false
   },
   catalog: {
     type: DataTypes.ENUM,
-    values: ["food", "house", "tax", "freetime", "clothes"],
+    values: ["Food", "House", "Tax", "Free Time", "Clothes"],
     allowNull: false,
   },
 });

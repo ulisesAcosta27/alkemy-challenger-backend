@@ -47,7 +47,7 @@ const createNewBudget = async (req, res) => {
   try {
     const createUse = await Budget.create({
       name,
-      quantity,
+      quantity: parseInt(quantity),
       type,
       catalog,
       userId: id,
