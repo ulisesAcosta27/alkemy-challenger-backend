@@ -23,7 +23,7 @@ const obtainAllIncomes = async (req, res) => {
   try {
     const getAllIncomes = await Budget.findAll({
       where: {
-        type: "incomes",
+        type: "Incomes",
       },
     });
     res.status(200).json(getAllIncomes);
@@ -34,7 +34,7 @@ const obtainAllIncomes = async (req, res) => {
 
 const obtainAllEgress = async (req, res) => {
   try {
-    const getAllEgress = await Budget.findAll({ where: { type: "egress" } });
+    const getAllEgress = await Budget.findAll({ where: { type: "Egress" } });
     res.status(200).json(getAllEgress);
   } catch (error) {
     console.log(error);
